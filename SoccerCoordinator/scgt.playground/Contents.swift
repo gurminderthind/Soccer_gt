@@ -1,203 +1,139 @@
 //: Playground - noun: a place where people can play
 
-let name: String = "name"
-let height: String = "height"
-let soccerExperience: String = "soccerExperience"
-let guardianName: String = "guardianName"
-
-let joeSmith: Dictionary <String,Any> = [
-    name: "Joe Smith",
-    height: 42,
-    soccerExperience: true,
-    guardianName: "Jim and Jan Smith"
+let playerName : [Int: String] = [
+    1: "Joe Smith",
+    2: "Jill Tanner",
+    3: "Bill Bon",
+    4: "Eva Gordon",
+    5: "Matt Gill",
+    6: "Kimmy Stein",
+    7: "Sammy Adams",
+    8: "Karl Saygan",
+    9: "Suzane Greenberg",
+    10: "Sal Dali",
+    11: "Joe Kavalier",
+    12: "Ben Finkelstein",
+    13: "Diego Soto",
+    14: "Chloe Alaska",
+    15: "Arnold Wilis",
+    16: "Phillip Clay",
+    17: "Les Clay",
+    18: "Herschel Krustofski"
 ]
 
-let jillTanner: Dictionary <String,Any> = [
-    name: "Jill Tanner",
-    height: 36,
-    soccerExperience: true,
-    guardianName: "Clara Tanner"
+let playerHeight : [Int: Int] = [
+    1: 42,
+    2: 36,
+    3: 43,
+    4: 45,
+    5: 40,
+    6: 41,
+    7: 45,
+    8: 42,
+    9: 44,
+    10: 41,
+    11: 39,
+    12: 44,
+    13: 41,
+    14: 47,
+    15: 43,
+    16: 44,
+    17: 42,
+    18: 45
 ]
 
-let billBon: Dictionary <String,Any> = [
-    name: "Bill Bon",
-    height: 43,
-    soccerExperience: true,
-    guardianName: "Sara and Jenny Bon"
+let playerSoccerExp : [Int: Bool] = [
+    1: true,
+    2: true,
+    3: true,
+    4: false,
+    5: false,
+    6: false,
+    7: false,
+    8: true,
+    9: true,
+    10: false,
+    11: false,
+    12: false,
+    13: true,
+    14: false,
+    15: false,
+    16: true,
+    17: true,
+    18: true
 ]
 
-let evaGordon: Dictionary <String,Any> = [
-    name: "Eva Gordon",
-    height: 45,
-    soccerExperience: false,
-    guardianName: "Wendy and Mike Gordon"
+let playerGuardianName : [Int: String] = [
+    1: "Jim and Jan Smith",
+    2: "Clara Tanner",
+    3: "Sara and Jenny Bon",
+    4: "Wendy and Mike Gordon",
+    5: "Charles and Sylvia Gill",
+    6: "Bill and Hillary Stein",
+    7: "Jeff Adams",
+    8: "Heather Bledsoe",
+    9: "Henriette Dumas",
+    10: "Gala Dali",
+    11: "Sam and Elaine Kavalier",
+    12: "Aaron and Jill Finkelstein",
+    13: "Robin and Sarika Soto",
+    14: "David and Jamie Alaska",
+    15: "Claire Willis",
+    16: "Thomas Helm and Eva Jones",
+    17: "Wynonna Brown",
+    18: "Hyman and Rachel Krustofski"
 ]
 
-let mattGill: Dictionary <String,Any> = [
-    name: "Matt Gill",
-    height: 40,
-    soccerExperience: false,
-    guardianName: "Charles and Sylvia Gill"
-]
+var experiencedPlayers: [Int] = []
+var nonExperiencedPlayers: [Int] = []
 
-let kimmyStein: Dictionary <String,Any> = [
-    name: "Kimmy Stein",
-    height: 41,
-    soccerExperience: false,
-    guardianName: "Bill and Hillary Stein"
-]
+var teamDragons : [Int] = []
+var teamSharks : [Int] = []
+var teamRaptors : [Int] = []
 
-let sammyAdams: Dictionary <String,Any> = [
-    name: "Sammy Adams",
-    height: 45,
-    soccerExperience: false,
-    guardianName: "Jeff Adams"
-]
+let totalPlayerInTeam = playerSoccerExp.count/3
 
-let karlSaygan: Dictionary <String,Any> = [
-    name: "Karl Saygan",
-    height: 42,
-    soccerExperience: true,
-    guardianName: "Heather Bledsoe"
-]
+var numExpPlayers = 0
 
-let suzaneGreenberg: Dictionary <String,Any> = [
-    name: "Suzane Greenberg",
-    height: 44,
-    soccerExperience: true,
-    guardianName: "Henrietta Dumas"
-]
-
-let salDali: Dictionary <String,Any> = [
-    name: "Sal Dali",
-    height: 41,
-    soccerExperience: false,
-    guardianName: "Gala Dali"
-]
-
-let joeKavalier: Dictionary <String,Any> = [
-    name: "Joe Kavalier",
-    height: 39,
-    soccerExperience: false,
-    guardianName: "Sam and Elaine Kavalier"
-]
-
-let benFinkelstein: Dictionary <String,Any> = [
-    name: "Ben Finkelstein",
-    height: 44,
-    soccerExperience: false,
-    guardianName: "Aaron and Jill Finkelstein"
-]
-
-let diegoSoto: Dictionary <String,Any> = [
-    name: "Diego Soto",
-    height: 41,
-    soccerExperience: true,
-    guardianName: "Robin and Sarika Soto"
-]
-
-let chloeAlaska: Dictionary <String,Any> = [
-    name: "Chloe Alaska",
-    height: 47,
-    soccerExperience: false,
-    guardianName: "David and Jamie Alaska"
-]
-
-let arnoldWillis: Dictionary <String,Any> = [
-    name: "Arnold Willis",
-    height: 43,
-    soccerExperience: false,
-    guardianName: "Claire Willis"
-]
-
-let phillipHelm: Dictionary <String,Any> = [
-    name: "Phillip Helm",
-    height: 44,
-    soccerExperience: true,
-    guardianName: "Thomas Helm and Eva Jones"
-]
-
-let lesClay: Dictionary <String,Any> = [
-    name: "Les Clay",
-    height: 42,
-    soccerExperience: true,
-    guardianName: "Wynonna Brown"
-]
-
-let herschelKrustofski: Dictionary <String,Any> = [
-    name: "Herschel Krustofski",
-    height: 45,
-    soccerExperience: true,
-    guardianName: "Hyman and Rachel Krustofski"
-]
-
-let players: [Dictionary<String, Any>] = [
-    joeSmith,
-    jillTanner,
-    billBon,
-    evaGordon,
-    mattGill,
-    kimmyStein,
-    sammyAdams,
-    karlSaygan,
-    suzaneGreenberg,
-    salDali,
-    joeKavalier,
-    benFinkelstein,
-    diegoSoto,
-    chloeAlaska,
-    arnoldWillis,
-    phillipHelm,
-    lesClay,
-    herschelKrustofski
-]
-
-var experiencedPlayers: [Dictionary<String, Any>] = []
-var inexperiencedPlayers: [Dictionary<String, Any>] = []
-for player in players {
-    if player[soccerExperience] as! Bool == true {
-        experiencedPlayers.append(player)
-    } else {
-        inexperiencedPlayers.append(player)
+for (index,experience) in playerSoccerExp {
+    if(experience == true){
+        numExpPlayers += 1
     }
 }
 
-var sharks: [Dictionary<String, Any>] = []
-var dragons: [Dictionary<String, Any>] = []
-var raptors: [Dictionary<String, Any>] = []
+let expPlayersPerTeam = numExpPlayers/3
 
-for i in 0..<experiencedPlayers.count {
-    let player = experiencedPlayers[i]
-    let mod = i % 3
-    if mod == 0 {
-        sharks.append(player)
-    } else if mod == 1 {
-        dragons.append(player)
-    } else {
-        raptors.append(player)
+for(index,experience) in playerSoccerExp{
+    if experience == true {
+        experiencedPlayers.append(index)
+    }else{
+        nonExperiencedPlayers.append(index)
     }
 }
 
-for i in 0..<inexperiencedPlayers.count {
-    let player = inexperiencedPlayers[i]
-    let mod = i % 3
-    if mod == 0 {
-        raptors.append(player)
-    } else if mod == 1 {
-        dragons.append(player)
-    } else {
-        sharks.append(player)
-    }
+for i in 0..<expPlayersPerTeam {
     
-    for player in sharks {
-        print("Dear \(player[guardianName]), your child, \(player[name]),has been placed on the team Sharks. The first practice is on February 28,2017")
-    }
+    teamDragons.append(experiencedPlayers[i])
+    teamSharks.append(experiencedPlayers[i])
+    teamRaptors.append(experiencedPlayers[i])
     
-    for player in dragons {
-        print("Dear \(player[guardianName]), your child, \(player[name]),has been placed on the team Dragons. The first practice is on February 28,2017")
-    }
-    
-    for player in raptors {
-        print("Dear \(player[guardianName]), your child, \(player[name]),has been placed on the team Raptors. The first practice is on February 28,2017")
-    }
 }
+
+for i1 in expPlayersPerTeam..<totalPlayerInTeam{
+    teamDragons.append(nonExperiencedPlayers[i1])
+    teamSharks.append(nonExperiencedPlayers[i1])
+    teamRaptors.append(nonExperiencedPlayers[i1])
+}
+
+for playerIndex in teamDragons{
+    print("To: \(playerGuardianName[playerIndex]), Your child \(playerName[playerIndex]) from Team Dragon will attend their first team practice on April 30,2017")
+}
+
+for playerIndex in teamSharks{
+    print("To: \(playerGuardianName[playerIndex]), Your child \(playerName[playerIndex]) from Team Sharks will attend their first team practice on April 30,2017")
+}
+
+for playerIndex in teamRaptors{
+    print("To: \(playerGuardianName[playerIndex]), Your child \(playerName[playerIndex]) from Team Raptors will attend their first team practice on April 30,2017")
+}
+
